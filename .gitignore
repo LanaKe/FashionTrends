@@ -1,0 +1,13 @@
+fashion_env/
+images/
+runway_images/
+literature/
+images_clean/
+*.csv
+*.CSV
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG

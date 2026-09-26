@@ -1,0 +1,159 @@
+=== Keyword Trend Classification ===
+                  Classification
+Keyword                         
+creamy yellow              FADED
+hot pants             PERSISTENT
+moccasins             PERSISTENT
+bubble hem                 FADED
+wide leg trousers     PERSISTENT
+Y2K fashion                FADED
+thong sandals              FADED
+strapless dress       SPIKE_FADE
+barrel leg jeans           FADED
+ballet flat shoes          FADED
+
+
+==================================================
+       GLOBAL BACKGROUND BIAS ANALYSIS SUMMARY       
+==================================================
+RAW IMAGES FOLDER (Backgrounds Intact):
+  └─ Global Within-Show Similarity:  0.8371
+  └─ Global Between-Show Similarity: 0.7939
+  └─ Aesthetic Variance Delta:        0.0432
+
+CLEAN IMAGES FOLDER (Backgrounds Stripped):
+  └─ Global Within-Show Similarity:  0.8240
+  └─ Global Between-Show Similarity: 0.7901
+  └─ Aesthetic Variance Delta:        0.0339
+--------------------------------------------------
+Global Background Noise Reduction: 0.0039
+==================================================
+
+
+        best_score  n_trends_activated
+count  13190.000000        13190.000000
+mean       0.260605            9.717437
+std        0.012704            0.624875
+min        0.196084            4.000000
+25%        0.251734           10.000000
+50%        0.259825           10.000000
+75%        0.268534           10.000000
+max        0.321190           10.000000
+threshold: 0.22
+         best_score  n_trends_activated
+count  13190.000000        13190.000000
+mean       0.260605            4.648370
+std        0.012704            1.575871
+min        0.196084            0.000000
+25%        0.251734            4.000000
+50%        0.259825            4.000000
+75%        0.268534            6.000000
+max        0.321190           10.000000
+threshold: 0.26
+         best_score  n_trends_activated
+count  13190.000000        13190.000000
+mean       0.260605            0.632373
+std        0.012704            0.730413
+min        0.196084            0.000000
+25%        0.251734            0.000000
+50%        0.259825            0.000000
+75%        0.268534            1.000000
+max        0.321190            5.000000
+
+=== Analysis A: Cross-trend activation t = 0.26 ===
+Persistent  — mean: 4.718, std: 1.642, n=6521
+Faded  — mean: 4.585, std: 1.573, n=5610
+Welch t=4.565, p=0.0000
+Cohen's d effect size: 0.083
+Result: SIGNIFICANT (p<0.05)
+
+=== Analysis A: Cross-trend activation t = 0.22===
+Persistent  — mean: 0.751, std: 0.724, n=6521
+Faded  — mean: 0.504, std: 0.719, n=5610
+Welch t=18.761, p=0.0000
+Cohen's d effect size: 0.342
+Result: SIGNIFICANT (p<0.05)
+
+=== Analysis B
+                     slope  r_squared  p_value
+moccasins          0.00057    0.66720  0.04726
+barrel leg jeans   0.00057    0.78650  0.01848
+wide leg trousers  0.00046    0.31232  0.24898
+Y2K fashion        0.00019    0.70356  0.03689
+bubble hem         0.00016    0.16173  0.42929
+ballet flat shoes  0.00016    0.05022  0.66946
+hot pants         -0.00008    0.00770  0.86874
+creamy yellow     -0.00038    0.17327  0.41168
+thong sandals     -0.00061    0.12173  0.49789
+strapless dress   -0.00088    0.21380  0.35585
+
+Two of the three statistically significant keywords — barrel leg jeans and Y2K fashion — are classified FADED by Google Trends yet show the strongest positive runway slopes (β=+0.00057 each, R²=0.787 and 0.704 respectively). Their runway visual presence grew most steeply across the six seasons precisely while public search interest was declining. This runway-search divergence is consistent with a temporal lag between runway adoption and public cultural naming: these aesthetics may have been gaining visual traction on the runway before the public had settled on searchable terminology for them.
+
+
+================================================================= FIXED
+
+=== Summary table for paper === THRESHOLD SENSITIVITY
+  tau  mean_p  mean_f  abs_diff  cohens_d  ci_lo  ci_hi  p_perm
+0.180   8.832   8.519     0.314     0.944  0.582  1.404   0.001
+0.185   8.680   8.227     0.453     0.954  0.572  1.452   0.002
+0.190   8.346   7.889     0.457     0.775  0.351  1.257   0.014
+0.195   8.015   7.442     0.573     0.891  0.370  1.448   0.007
+0.200   7.465   6.839     0.626     0.806  0.323  1.382   0.009
+0.205   6.876   6.169     0.707     0.799  0.240  1.420   0.013
+0.210   6.045   5.516     0.529     0.538 -0.029  1.165   0.102
+0.215   5.228   4.812     0.416     0.395 -0.191  1.006   0.230
+0.220   4.413   4.096     0.317     0.264 -0.353  0.855   0.429
+0.225   3.206   3.429    -0.222    -0.232 -0.679  0.356   0.510
+0.230   2.229   2.747    -0.518    -0.535 -0.978 -0.084   0.082
+0.235   1.577   2.191    -0.614    -0.587 -1.089 -0.133   0.050
+0.240   1.126   1.655    -0.528    -0.569 -1.175 -0.058   0.057
+0.245   0.725   1.075    -0.350    -0.401 -0.811  0.077   0.196
+0.250   0.463   0.748    -0.285    -0.324 -0.675  0.166   0.377
+0.255   0.212   0.494    -0.282    -0.440 -0.835 -0.171   0.119
+0.260   0.071   0.311    -0.240    -0.478 -1.112 -0.332   0.039
+0.265   0.030   0.146    -0.116    -0.447 -0.818 -0.223   0.099
+0.270   0.012   0.024    -0.012    -0.289 -0.638  0.426   0.407
+0.275   0.004   0.008    -0.004    -0.175 -0.458  0.793   0.814
+0.280   0.001   0.005    -0.003    -0.194 -0.432  0.969   0.962
+
+
+Computing circularity-corrected n_trends_activated...
+Original  n_trends_activated  mean: 4.648
+Corrected n_trends_activated  mean: 3.650
+Difference (bias from circularity): 0.998
+
+Total cells: 52
+              count   mean    std    min    25%    50%    75%    max
+persistence                                                         
+LOW_INTEREST   32.0  4.096  1.168  2.200  3.372  3.936  4.425  8.000
+PERSISTENT     14.0  4.413  1.237  3.448  3.706  3.939  4.639  8.000
+SPIKE_FADE      6.0  3.525  0.191  3.237  3.407  3.577  3.640  3.749
+
+Observed mean difference (PERSISTENT - LOW_INTEREST): 0.3172
+
+=== CORRECTED Analysis A (trend-season cells) ===
+PERSISTENT  n_cells=14  mean=4.413  sd=1.237
+LOW_INTEREST n_cells=32  mean=4.096  sd=1.168
+Observed difference: 0.3172
+Permutation p-value (two-tailed, 10000 permutations): 0.2770
+Cohen's d (cell-level): 0.264
+
+=== Analysis B — OLS regressions with multiple testing corrections ===
+Keyword                        β     R²   p_raw   p_Bonf    p_BH   CI_lo   CI_hi  Sig_BH
+------------------------------------------------------------------------------------------
+moccasins                0.00057  0.667   0.047    0.473   0.158 0.00001 0.00101      no
+barrel leg jeans         0.00057  0.786   0.018    0.185   0.158 0.00015 0.00082      no
+wide leg trousers        0.00046  0.312   0.249    1.000   0.613 -0.00049 0.00128      no
+Y2K fashion              0.00019  0.704   0.037    0.369   0.158 0.00007 0.00032      no
+bubble hem               0.00016  0.162   0.429    1.000   0.613 -0.00039 0.00055      no
+ballet flat shoes        0.00016  0.050   0.669    1.000   0.744 -0.00057 0.00092      no
+hot pants               -0.00008  0.008   0.869    1.000   0.869 -0.00083 0.00110      no
+creamy yellow           -0.00038  0.173   0.412    1.000   0.613 -0.00106 0.00051      no
+thong sandals           -0.00061  0.122   0.498    1.000   0.622 -0.00216 0.00088      no
+strapless dress         -0.00088  0.214   0.356    1.000   0.613 -0.00240 0.00093      no
+
+Bonferroni threshold: p < 0.0050
+Keywords surviving Bonferroni: 0
+Keywords surviving BH (FDR 5%): 0
+
+     
